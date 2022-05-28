@@ -25,8 +25,9 @@ public class ProjetoSpringBootApplication implements CommandLineRunner {
 
 		Usuario novoUsuario = new Usuario(null, "Rodrigo", "Meuemail@gmail.com" );
 		Usuario segundoUsuario = new Usuario(null, "Souza", "Esseemail@gmail.com" );
-		
-		usuarioRepository.saveAll(Arrays.asList(novoUsuario,segundoUsuario));
+		Usuario terceiroUsuario = new Usuario(null, "Maciel", "sememail@gmail.com" );
+
+		usuarioRepository.saveAll(Arrays.asList(novoUsuario,segundoUsuario, terceiroUsuario));
 		
 	}
  
