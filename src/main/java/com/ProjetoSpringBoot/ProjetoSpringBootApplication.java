@@ -36,6 +36,7 @@ public class ProjetoSpringBootApplication implements CommandLineRunner {
 		DigitoUnico segundoDigito = new DigitoUnico ();
 		DigitoUnico terceiroDigito = new DigitoUnico ();
 		
+		/*
 		primeiroUsuario.getDigitosUnicos().addAll(Arrays.asList(primeiroDigito, segundoDigito, terceiroDigito));
 		segundoUsuario.getDigitosUnicos().addAll(Arrays.asList(segundoDigito, terceiroDigito));
 		terceiroUsuario.getDigitosUnicos().addAll(Arrays.asList(terceiroDigito));
@@ -43,6 +44,8 @@ public class ProjetoSpringBootApplication implements CommandLineRunner {
 		primeiroDigito.getUsuarios().addAll(Arrays.asList(primeiroUsuario));
 		segundoDigito.getUsuarios().addAll(Arrays.asList(primeiroUsuario, segundoUsuario));
 		terceiroDigito.getUsuarios().addAll(Arrays.asList(primeiroUsuario, terceiroUsuario));		
+			
+		*/
 				
 		usuarioRepository.saveAll(Arrays.asList(primeiroUsuario,segundoUsuario, terceiroUsuario));
 		digitoUnicoRepository.saveAll(Arrays.asList(primeiroDigito, segundoDigito, terceiroDigito));
