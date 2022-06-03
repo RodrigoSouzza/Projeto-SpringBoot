@@ -36,7 +36,7 @@ public class ProjetoSpringBootApplication implements CommandLineRunner {
 		DigitoUnico segundoDigito = new DigitoUnico ();
 		DigitoUnico terceiroDigito = new DigitoUnico ();
 		
-		/*
+		/* 
 		primeiroUsuario.getDigitosUnicos().addAll(Arrays.asList(primeiroDigito, segundoDigito, terceiroDigito));
 		segundoUsuario.getDigitosUnicos().addAll(Arrays.asList(segundoDigito, terceiroDigito));
 		terceiroUsuario.getDigitosUnicos().addAll(Arrays.asList(terceiroDigito));
