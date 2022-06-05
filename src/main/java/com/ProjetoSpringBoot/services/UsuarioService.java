@@ -1,5 +1,6 @@
 package com.ProjetoSpringBoot.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,5 +41,9 @@ public class UsuarioService {
 		} catch (DataIntegrityViolationException e) {
 			throw new DataIntegrityException("Não é possivel excluir este usuário!");
 		}		
-	}	
+	}
+	
+	public List<Usuario> findAll(){
+		return repository.findAll();
+	}
 }

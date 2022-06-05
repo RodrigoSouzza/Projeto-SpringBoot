@@ -31,7 +31,7 @@ public class ProjetoSpringBootApplication implements CommandLineRunner {
 		Usuario primeiroUsuario = new Usuario(null, "Rodrigo", "Rodrigo.email@gmail.com" , null);
 		Usuario segundoUsuario = new Usuario(null, "Souza", "Souza.email@gmail.com" , null);
 		Usuario terceiroUsuario = new Usuario(null, "Maciel", "Maciel.email@gmail.com", null );
-
+ 
 		DigitoUnico primeiroDigito = new DigitoUnico ();
 		DigitoUnico segundoDigito = new DigitoUnico ();
 		DigitoUnico terceiroDigito = new DigitoUnico ();
