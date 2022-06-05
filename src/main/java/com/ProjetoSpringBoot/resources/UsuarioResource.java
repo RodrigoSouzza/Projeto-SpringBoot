@@ -42,7 +42,7 @@ public class UsuarioResource {
 		String digit = obj.getSequenciaDigitos();
 		int result = UsuarioService.CalculaVerificador(digit);
 		obj.setDigitoUnico(result);		
-		
+				
 		obj = service.inserir(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getId()).toUri();
@@ -54,7 +54,7 @@ public class UsuarioResource {
 		obj.setId(id);
 		String digit = obj.getSequenciaDigitos();
 		int result = UsuarioService.CalculaVerificador(digit);
-		
+				
 		obj.setDigitoUnico(result);			
 		obj = service.atualizar(obj);
 		return ResponseEntity.noContent().build(); 				

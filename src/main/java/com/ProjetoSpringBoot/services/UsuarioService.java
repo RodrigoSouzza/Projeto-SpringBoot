@@ -18,62 +18,62 @@ public class UsuarioService {
 	@Autowired
 	private UsuarioRepository repository;
 	
+		public List<Usuario> findAll(){
+			return repository.findAll();
+		}
+	
 		public Usuario buscar(Integer id) {
 		Optional<Usuario> obj = repository.findById(id);
 		return obj.orElseThrow(() -> new ObjectNotFoundException(
 		"Usuário não encontrado! ID: " + id + ", Tipo: " + Usuario.class.getName()));
 		}
 	
-	public Usuario inserir (Usuario obj) {
-		obj.setId(null);
-		return repository.save(obj);
-	}
+		public Usuario inserir (Usuario obj) {
+			obj.setId(null);
+			return repository.save(obj);
+		}
 	
-	public Usuario atualizar(Usuario obj) {
-		buscar(obj.getId());
-		return repository.save(obj);
-	}
+		public Usuario atualizar(Usuario obj) {
+			buscar(obj.getId());
+			return repository.save(obj);
+		}
 	
-	public void deletar(Integer id) {
-		buscar(id);
-		try {
-			repository.deleteById(id);
-		} catch (DataIntegrityViolationException e) {
-			throw new DataIntegrityException("Não é possivel excluir este usuário!");
-		}		
-	}
-	
-	public List<Usuario> findAll(){
-		return repository.findAll();
-	}
-	
-	public static int CalculaVerificador(String valor) {
-		int soma = 0;
-		int resto = 0;
-		int digitoVerificador = 0;
-		String [] numeros = new String[valor.length() +1];
-		int multiplicador = 2;
+		public void deletar(Integer id) {
+			buscar(id);
+			try {
+				repository.deleteById(id);
+			} catch (DataIntegrityViolationException e) {
+				throw new DataIntegrityException("Não é possivel excluir este usuário!");
+			}		
+		}
 		
-		for (int i = valor.length(); i > 0; i --) {
-			if(multiplicador > 9) {
-				multiplicador = 2;
-				numeros[i] = String.valueOf(Integer.valueOf(valor.substring(i -1, i)) * multiplicador);
-				multiplicador ++;
-			}else {
-				numeros[i] = String.valueOf(Integer.valueOf(valor.substring(i - 1, i)) * multiplicador);
-				multiplicador ++;
+		public static int CalculaVerificador(String valor) {
+			int soma = 0;
+			int resto = 0;
+			int digitoVerificador = 0;
+			String [] numeros = new String[valor.length() +1];
+			int multiplicador = 2;
+			
+			for (int i = valor.length(); i > 0; i --) {
+				if(multiplicador > 9) {
+					multiplicador = 2;
+					numeros[i] = String.valueOf(Integer.valueOf(valor.substring(i -1, i)) * multiplicador);
+					multiplicador ++;
+				}else {
+					numeros[i] = String.valueOf(Integer.valueOf(valor.substring(i - 1, i)) * multiplicador);
+					multiplicador ++;
+				}
+			}		
+			for(int i = numeros.length; i > 0; i--) {
+				if(numeros[i -1] != null) {
+					soma += Integer.valueOf(numeros[i -1]);
+				}
+			}		
+			resto = soma % 11;
+			digitoVerificador = 11 - resto;
+			if(digitoVerificador > 9 || digitoVerificador == 0) {
+				digitoVerificador = 1;
 			}
-		}		
-		for(int i = numeros.length; i > 0; i--) {
-			if(numeros[i -1] != null) {
-				soma += Integer.valueOf(numeros[i -1]);
+			return digitoVerificador;		
 			}
-		}		
-		resto = soma % 11;
-		digitoVerificador = 11 - resto;
-		if(digitoVerificador > 9 || digitoVerificador == 0) {
-			digitoVerificador = 1;
-		}
-		return digitoVerificador;		
-		}
 }

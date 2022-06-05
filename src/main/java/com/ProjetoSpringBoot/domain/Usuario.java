@@ -1,7 +1,6 @@
 package com.ProjetoSpringBoot.domain;
 
 import java.io.Serializable;
-import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -34,7 +33,5 @@ public class Usuario implements Serializable {
 	private String email;
 	private String sequenciaDigitos;
 	private Integer digitoUnico;
-	
-	private ArrayList<Integer>ListadigitoUnico = new ArrayList<>();
 
 }
