@@ -33,7 +33,9 @@ public class Usuario implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
-	private String email;	
+	private String email;
+	private String digitos;
+	private Integer resultado;
 	
 	
 	@ManyToMany(mappedBy="usuarios")
