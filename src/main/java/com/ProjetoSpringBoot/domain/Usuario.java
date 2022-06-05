@@ -2,13 +2,11 @@ package com.ProjetoSpringBoot.domain;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -32,13 +30,11 @@ public class Usuario implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	private String name;
+	private String nome;
 	private String email;
-	private String digitos;
-	private Integer resultado;
+	private String sequenciaDigitos;
+	private Integer digitoUnico;
 	
-	
-	@ManyToMany(mappedBy="usuarios")
-	private List<DigitoUnico>digitosUnicos = new ArrayList<>();
-	
+	private ArrayList<Integer>ListadigitoUnico = new ArrayList<>();
+
 }

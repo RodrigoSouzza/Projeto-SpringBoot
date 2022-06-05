@@ -15,12 +15,12 @@ public class UsuarioDTO implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private Integer id;
-	private String name;
+	private String nome;
 	private String email;
 	
 	public UsuarioDTO(Usuario obj) {
 		id = obj.getId();
-		name = obj.getName();
+		nome = obj.getNome();
 		email = obj.getEmail();
 	}
 }

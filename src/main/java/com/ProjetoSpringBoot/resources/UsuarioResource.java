@@ -39,9 +39,10 @@ public class UsuarioResource {
 	
 	@RequestMapping(method = RequestMethod.POST)
 	public ResponseEntity<Void> inserir(@RequestBody Usuario obj){
-		String digit = obj.getDigitos();
+		String digit = obj.getSequenciaDigitos();
 		int result = UsuarioService.CalculaVerificador(digit);
-		obj.setResultado(result);
+		obj.setDigitoUnico(result);		
+		
 		obj = service.inserir(obj);
 		URI uri = ServletUriComponentsBuilder.fromCurrentRequest()
 				.path("/{id}").buildAndExpand(obj.getId()).toUri();
@@ -51,9 +52,10 @@ public class UsuarioResource {
 	@RequestMapping(value = "/{id}",  method = RequestMethod.PUT)
 	public ResponseEntity<Void> atualizar(@RequestBody Usuario obj, @PathVariable  Integer id){
 		obj.setId(id);
-		String digit = obj.getDigitos();
+		String digit = obj.getSequenciaDigitos();
 		int result = UsuarioService.CalculaVerificador(digit);
-		obj.setResultado(result);
+		
+		obj.setDigitoUnico(result);			
 		obj = service.atualizar(obj);
 		return ResponseEntity.noContent().build(); 				
 	}
