@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -35,6 +37,7 @@ public class Usuario implements Serializable {
 	private String name;
 	private String email;	
 	
+	@JsonManagedReference
 	@ManyToMany(mappedBy="usuarios")
 	private List<DigitoUnico>digitosUnicos = new ArrayList<>();
 	
