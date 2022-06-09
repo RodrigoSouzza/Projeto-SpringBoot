@@ -26,6 +26,6 @@ Metodo DELETE = responsável ppor deletar usuários ja cadastrados no banco de d
 
 O projeto possui uma função capaz de pegar uma sequencia de digitos fornecida pelo usuario e trata-la para obtenção do digito verificador, que consiste na seguinte lógica: o usuario fornece uma sequencia de digitos e o programa e capaz de efetuar a soma de todos os numeros ate que reste apenas um digito como resposta. 
 
-### sequencia de digitos: 5869574 -> soma-se todos os números fornecidos -> 5 + 8 + 6 + 9 + 5 + 7 + 4 = 44 continua a soma ate restar apenas um digito -> 4 + 4 = 8
+ sequencia de digitos: 5869574 -> soma-se todos os números fornecidos -> 5 + 8 + 6 + 9 + 5 + 7 + 4 = 44 continua a soma ate restar apenas um digito -> 4 + 4 = 8
 
 O projeto conta com implementação do LOMBOK um framework java que visa eliminar a verbosidade do codigo, deixando-o mais limpo.
