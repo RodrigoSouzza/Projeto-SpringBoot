@@ -18,7 +18,7 @@ Metodo GET - é possivel buscar por um usuário específico digitando usuario/(o
 
 Metodo GET - é possivel buscar todos os usuários cadastrados no banco de dados, porem so são mostrados os atributos nome e email de cada usuário, pois esse metodo GET busca usuário DTO.
 
-Metodo POST - é o metodo responsável pelo cadastro de usuários no banco de dados, onde é necessário informar apenas os atributos (nome, email, e a sequencia de digitos, pois o ID e o digito verificador são preenchido automáticamente. 
+Metodo POST - é o metodo responsável pelo cadastro de usuários no banco de dados, onde é necessário informar apenas os atributos (nome, email, e a sequencia de digitos, pois o ID e o digito verificador são preenchidos automáticamente. 
 
 Metodo PUT - responsável pela atualização de dados cadastrados de um usuário.
 
